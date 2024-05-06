@@ -31,7 +31,12 @@ namespace Esercizio_login_user
                 app.UseDeveloperExceptionPage();
             }
             app.UseStaticFiles(); 
-            app.UseMvcWithDefaultRoute(); 
+            app.UseMvc(routes =>
+            {
+                routes.MapRoute(
+                name: "default",
+                template: "{controller=Login}/{action=Index}/{id?}");
+            }); 
         } 
     }
 }
