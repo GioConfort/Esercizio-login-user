@@ -31,17 +31,18 @@ namespace Esercizio_login_user.Models.Services.Application
 
             return utentiList;
         }
-        public void AddUtente(string username, string nome, string email)
+        public void AddUtente(string username, string nome, string email, string password)
         {
             using(SqliteConnection conn = new SqliteConnection("Data Source=Data/utenti.db"))
             {
                 conn.Open();
-                string query = @"INSERT INTO utenti (Nome, Email, Username)
-                               VALUES (@Nome, @Email, @Username)";
+                string query = @"INSERT INTO utenti (Nome, Email, Username, Password)
+                               VALUES (@Nome, @Email, @Username, @Password)";
                 SqliteCommand cmd = new SqliteCommand(query, conn);
                 cmd.Parameters.AddWithValue("@Nome", nome);
                 cmd.Parameters.AddWithValue("@Email", email);
                 cmd.Parameters.AddWithValue("@Username", username);
+                cmd.Parameters.AddWithValue("@Password", password);
 
                 cmd.ExecuteNonQuery();
             }

@@ -19,7 +19,8 @@ namespace Esercizio_login_user
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
-            services.AddTransient<IHomeService, AdoNetHomeService>();           
+            services.AddTransient<IHomeService, AdoNetHomeService>();       
+            services.AddTransient<ILoginService, AdoNetLoginService>();    
             services.AddTransient<IDatabaseAccessor, SqliteDatabaseAccessor>();
         }
 

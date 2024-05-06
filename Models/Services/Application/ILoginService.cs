@@ -6,10 +6,8 @@ using Esercizio_login_user.Models.ViewModels;
 
 namespace Esercizio_login_user.Models.Services.Application
 {
-    public interface IHomeService
+    public interface ILoginService
     {
-        List<UtentiViewModel> GetUtenti();
-        void AddUtente(string username, string nome, string email, string password);
-        void RemoveUtente(int id);
+        bool CheckUtente(string username, string password);
     }
 }

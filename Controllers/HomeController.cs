@@ -26,9 +26,9 @@ namespace Esercizio_login_user.Controllers
         {
             return View();
         }
-        public IActionResult AggiungiUtente(string username, string nome, string email)
+        public IActionResult AggiungiUtente(string username, string nome, string email, string password)
         {
-            homeService.AddUtente(username, nome, email);
+            homeService.AddUtente(username, nome, email, password);
             List<UtentiViewModel> utenti = homeService.GetUtenti();
             return RedirectToAction("Index");
         }
