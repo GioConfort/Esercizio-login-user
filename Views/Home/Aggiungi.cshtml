@@ -1,5 +1,5 @@
 
-<form action="/*Link inserimento utente*/" method="get" enctype="multipart/form-data">
+<form action="/AggiungiUtente" method="get">
 
 	<caption>
 		<h2></h2>
@@ -9,23 +9,23 @@
 
 	<fieldset class="form-group">
 		<label>User Name</label> <input type="text" value=""
-			class="form-control" name="nome" required="required">
+			class="form-control" name="username" required="required">
+	</fieldset>
+
+	<fieldset class="form-group">
+		<label>User Nome</label> <input type="text" value=""
+			class="form-control" name="nome">
 	</fieldset>
 
 	<fieldset class="form-group">
 		<label>User Email</label> <input type="text" value=""
 			class="form-control" name="email">
 	</fieldset>
-
-	<fieldset class="form-group">
-		<label>User Country</label> <input type="text" value=""
-			class="form-control" name="nazione">
-	</fieldset>
 	
-	<fieldset class="form-group">
+	@* <fieldset class="form-group">
 		<label>Immagine</label>
 	<input type="file" name="file" />
-	</fieldset>
+	</fieldset> *@
 
-	<button type="submit" class="btn btn-success">Save</button>
+	<input type="submit" class="btn btn-success" value="Invia" asp-controller="Home" asp-action="AggiungiUtente">Save</input>
 </form>

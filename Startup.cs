@@ -9,6 +9,8 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Esercizio_login_user.Models.Services.Application;
+using Esercizio_login_user.Models.Services.Infrastructures;
 
 namespace Esercizio_login_user
 {
@@ -17,8 +19,8 @@ namespace Esercizio_login_user
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();
-            //services.AddTransient<ICinemaService, AdoNetCinemaService>();           
-            //services.AddTransient<IDatabaseAccessor, SqliteDatabaseAccessor>();
+            services.AddTransient<IHomeService, AdoNetHomeService>();           
+            services.AddTransient<IDatabaseAccessor, SqliteDatabaseAccessor>();
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, IApplicationLifetime lifetime)
